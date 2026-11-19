@@ -1,0 +1,523 @@
+{
+ "source": "University of Lagos Institutional Repository (https://ir.unilag.edu.ng), public item pages",
+ "accessed": "2026-11-19",
+ "note": "Extension batch for the live demonstration. Not part of the 15-record audit sample reported in the thesis. Empty strings mean the field was blank or not displayed on the live page; each record's notes say which. Where the Authors or Date field was not displayed but the citation line named them, the citation value is used and the note says so. Abstract holds a one-line summary, not the full text.",
+ "records": [
+  {
+   "handle": "",
+   "url": "https://ir.unilag.edu.ng/items/16cf78e1-4f65-407b-a7de-dc043c2df757",
+   "title": "Design of Adaptive Control Schemes for an Industrial Robot Arm.",
+   "creators": [
+    "Katende, J."
+   ],
+   "contributor_advisor": "",
+   "date": "1986-03",
+   "type": "Thesis",
+   "subjects": [
+    "Industrial Robots",
+    "Motion control",
+    "Robot Controllers",
+    "Adaptive Control"
+   ],
+   "publisher": "University of Lagos",
+   "language": "en",
+   "abstract": "Robust adaptive controllers for a three-joint industrial robot arm, validated by simulation, because conventional controllers fail under changing payloads and fast motion.",
+   "abstract_status": "real",
+   "faculty": "Faculty of Engineering",
+   "community": "Theses and Dissertations",
+   "files": [],
+   "batch": "extension",
+   "notes": "Faculty inferred from the PhD in Electrical Engineering named in the citation. Description field reads 'Full Text Attached'."
+  },
+  {
+   "handle": "",
+   "url": "https://ir.unilag.edu.ng/items/0785b002-81af-4c13-a747-146e4786125d",
+   "title": "A new composite multiderivative linear multistep methods for solving stiff initial value problems",
+   "creators": [
+    "Okunuga, S.A."
+   ],
+   "contributor_advisor": "",
+   "date": "",
+   "type": "Thesis",
+   "subjects": [],
+   "publisher": "School of Postgraduate Studies of the University of Lagos, Akoka",
+   "language": "en",
+   "abstract": "Opens by noting that many physical, biological and management problems lead to differential equations with no closed-form solution, then focuses on the mathematical model.",
+   "abstract_status": "real",
+   "faculty": "Faculty of Science",
+   "community": "Theses and Dissertations",
+   "files": [],
+   "batch": "extension",
+   "notes": "Date field blank on the page (citation gives 1992). Author taken from the citation line, Authors field not displayed. Faculty inferred from the Department of Mathematics named in the citation."
+  },
+  {
+   "handle": "123456789/3035",
+   "url": "https://ir.unilag.edu.ng/items/8ecd7a92-5d8d-4d2a-a1e4-dfe63c185cf3",
+   "title": "The Effect of Laboratory Teaching in Physics on the Achievement (in Physics) of Nigerian Secondary School Students.",
+   "creators": [
+    "Ogunleye, E.P."
+   ],
+   "contributor_advisor": "",
+   "date": "1987",
+   "type": "Thesis",
+   "subjects": [
+    "Physics",
+    "Physics Education",
+    "Laboratory Teaching",
+    "Technological Development"
+   ],
+   "publisher": "University of Lagos",
+   "language": "en",
+   "abstract": "Compares three laboratory teaching methods with 600 Class V students in Lagos State on cognitive achievement, scientific attitudes and practical skills in physics.",
+   "abstract_status": "real",
+   "faculty": "Faculty of Education",
+   "community": "Theses and Dissertations",
+   "files": [
+    {
+     "name": "THE EFFECT OF LABORATORY TEACHING IN PHYSICS ON THE ACHIEVEMENT (IN PHYSICS) OF NIGERIA.pdf",
+     "size_mb": 11.74
+    }
+   ],
+   "batch": "extension",
+   "notes": "Authors field reads E.P. but the citation line reads Ogunleye, A.O. (real inconsistency, kept as shown). Collection shown on page: Faculty of Education."
+  },
+  {
+   "handle": "",
+   "url": "https://ir.unilag.edu.ng/items/c1002ac7-7e45-4465-85f0-714b8cecd711",
+   "title": "Analysis of Dynamic Stress propagation of a Vibrating Subsea Structure in a Pressurized Environment.",
+   "creators": [
+    "Ogunmola, O.Y"
+   ],
+   "contributor_advisor": "",
+   "date": "2012",
+   "type": "Thesis",
+   "subjects": [],
+   "publisher": "",
+   "language": "en",
+   "abstract": "Models a subsea pipeline as an elastic beam carrying fluid on an elastic foundation and derives analytic stress, buckling and burst pressure solutions.",
+   "abstract_status": "real",
+   "faculty": "Faculty of Engineering",
+   "community": "Theses and Dissertations",
+   "files": [],
+   "batch": "extension",
+   "notes": "Author and year taken from the citation line; Authors, Date, Publisher and Keywords not displayed. Faculty inferred from subject matter, department not stated."
+  },
+  {
+   "handle": "",
+   "url": "https://ir.unilag.edu.ng/items/1447217a-4f4a-47dd-b35e-cbbc7fa93eb8",
+   "title": "The impact of industrial disharmony in the health system outcomes: a case study of the Nigerian Health Sector",
+   "creators": [
+    "Fasanmade, O.A."
+   ],
+   "contributor_advisor": "",
+   "date": "",
+   "type": "Thesis",
+   "subjects": [],
+   "publisher": "School of Postgraduate, University of Lagos, Akoka",
+   "language": "en",
+   "abstract": "Qualitative study of how recurring strikes in the Nigerian health sector affect the health system, government and public, with recommendations on funding, dialogue and collective bargaining.",
+   "abstract_status": "real",
+   "faculty": "Faculty of Management Sciences",
+   "community": "Theses and Dissertations",
+   "files": [],
+   "batch": "extension",
+   "notes": "Date field blank (citation gives 2021). Description: 'Award of masters in public administration degree'. Author from citation line. Faculty inferred from the Public Administration degree."
+  },
+  {
+   "handle": "",
+   "url": "https://ir.unilag.edu.ng/items/4a90f391-5d92-4b70-9115-71fa52b7dd65",
+   "title": "Effects of Perceved Market Risks and Socioeconomic Variables on Customer Loyality in the Global Systems of Mobile-Telecommunication in Lagos State",
+   "creators": [
+    "Olufayo, T.O"
+   ],
+   "contributor_advisor": "",
+   "date": "2017-08",
+   "type": "Thesis",
+   "subjects": [
+    "Customer Loyalty",
+    "Perceived Market Risk",
+    "Income",
+    "Social Class"
+   ],
+   "publisher": "",
+   "language": "en",
+   "abstract": "Survey of 861 GSM subscribers in Lagos State: socioeconomic factors have a significant but very weak relationship with loyalty, perceived market risk has none.",
+   "abstract_status": "real",
+   "faculty": "Faculty of Management Sciences",
+   "community": "Theses and Dissertations",
+   "files": [],
+   "batch": "extension",
+   "notes": "Title spelling errors (Perceved, Loyality) are as shown on the page. Publisher blank. Faculty inferred from subject matter."
+  },
+  {
+   "handle": "123456789/4084",
+   "url": "https://ir.unilag.edu.ng/items/896a09ab-200d-420d-8409-d50450fc4be8",
+   "title": "Landscape Characteristics of the Lagos Lagoon Waterfront: Perceptions and Preferences for Tourism.",
+   "creators": [
+    "Nnezi Uduma, O"
+   ],
+   "contributor_advisor": "",
+   "date": "2014",
+   "type": "Thesis",
+   "subjects": [
+    "Landscape",
+    "Tourism Development",
+    "Lagos Lagoon Waterfront",
+    "Research Subject Categories::FORESTRY, AGRICULTURAL SCIENCES and LANDSCAPE PLANNING",
+    "Landscape planning::Nature conservation and landscape management"
+   ],
+   "publisher": "",
+   "language": "en",
+   "abstract": "Surveys 422 users and 26 experts on how the lagoon waterfront's landscape, place attachment and social patterns affect tourism development; landscape has the strongest effect.",
+   "abstract_status": "real",
+   "faculty": "Faculty of Environmental Sciences",
+   "community": "Theses and Dissertations",
+   "files": [
+    {
+     "name": "Landscape Characteristics of the Lagos Lagoon Waterfront Perceptions and Preferences for Tourism..pdf",
+     "size_mb": 3.57
+    }
+   ],
+   "batch": "extension",
+   "notes": "Publisher blank. Collection shown on page: Faculty of Environmental Sciences."
+  },
+  {
+   "handle": "123456789/3137",
+   "url": "https://ir.unilag.edu.ng/items/5f19e26a-be18-4678-80e8-4c4a97e52e7b",
+   "title": "Housing Development Characteristics in Lagos State Peri-Urban Settlements",
+   "creators": [
+    "Adedire, F.M"
+   ],
+   "contributor_advisor": "",
+   "date": "2017-10",
+   "type": "Thesis",
+   "subjects": [
+    "Challenges;",
+    "Governance",
+    "Housing development",
+    "Quality of housing"
+   ],
+   "publisher": "",
+   "language": "en",
+   "abstract": "Studies drivers of housing development, resident characteristics, dwelling quality and governance challenges in peri-urban Lagos, with cases in Ibeju-Lekki and Ikorodu.",
+   "abstract_status": "real",
+   "faculty": "Faculty of Environmental Sciences",
+   "community": "Theses and Dissertations",
+   "files": [
+    {
+     "name": "3_Cover Page.pdf",
+     "size_mb": 0.19
+    },
+    {
+     "name": "HOUSING DEVELOPMENT.pdf",
+     "size_mb": 7.44
+    }
+   ],
+   "batch": "extension",
+   "notes": "Publisher blank. Keyword 'Challenges;' carries a stray semicolon on the page. Collection shown on page: Faculty of Environmental Sciences."
+  },
+  {
+   "handle": "",
+   "url": "https://ir.unilag.edu.ng/items/3d1c1bfd-bb45-4c3e-8f5d-60fed1f125b6",
+   "title": "Synthesis of Novel Schiff Base Metal Complexes of Aminophenols as Potential Antiseptic Agents",
+   "creators": [
+    "Elijah, F.N"
+   ],
+   "contributor_advisor": "",
+   "date": "2015",
+   "type": "Thesis",
+   "subjects": [],
+   "publisher": "",
+   "language": "en",
+   "abstract": "Argues that microbial resistance and hospital-acquired infections create a need for new antiseptic compounds that microbes have not yet resisted.",
+   "abstract_status": "real",
+   "faculty": "Faculty of Science",
+   "community": "Theses and Dissertations",
+   "files": [],
+   "batch": "extension",
+   "notes": "Author and year from the citation line; Authors, Date, Publisher and Keywords not displayed. Faculty inferred from subject matter."
+  },
+  {
+   "handle": "",
+   "url": "https://ir.unilag.edu.ng/items/87791403-62eb-4e55-b307-8c8dfe83ded8",
+   "title": "Experimental Infections of Biomphalaria Glabrata, B. Pfeifferi and B. Sudanica with Schistosoma Mansoni",
+   "creators": [],
+   "contributor_advisor": "",
+   "date": "",
+   "type": "Thesis",
+   "subjects": [],
+   "publisher": "",
+   "language": "en",
+   "abstract": "Laboratory study of the compatibility of three Biomphalaria snail species with Schistosoma mansoni, covering diet, exposure method, snail size, parasite dose and superinfection.",
+   "abstract_status": "real",
+   "faculty": "Faculty of Science",
+   "community": "Theses and Dissertations",
+   "files": [],
+   "batch": "extension",
+   "notes": "Authors, Date and Publisher fields are shown blank on the page; the citation line names Wey, I.O (1989). Description reads 'Full Text Attached'. Faculty inferred from subject matter."
+  },
+  {
+   "handle": "",
+   "url": "https://ir.unilag.edu.ng/items/491ff4d6-c5e3-4a1d-b9cc-e41e732695bb",
+   "title": "Characterization of Allergenic Fungal Spores from Selected Locations in Lagos and Ibadan, Nigeria",
+   "creators": [
+    "Odebode, A.J"
+   ],
+   "contributor_advisor": "",
+   "date": "2017",
+   "type": "Thesis",
+   "subjects": [],
+   "publisher": "",
+   "language": "en",
+   "abstract": "Two-year survey of airborne fungal spores in Lagos and Ibadan found 39 species and strains, mostly Aspergillus and Penicillium, plus effects of inoculation in mice.",
+   "abstract_status": "real",
+   "faculty": "Faculty of Science",
+   "community": "Theses and Dissertations",
+   "files": [],
+   "batch": "extension",
+   "notes": "Author and year from the citation line; Publisher blank. Faculty inferred from subject matter."
+  },
+  {
+   "handle": "123456789/4483",
+   "url": "https://ir.unilag.edu.ng/items/f88768c0-f3c8-4911-8d56-371dded21c3c",
+   "title": "Geoelectric Mapping of Hydrocarbon Contamination and Characterization of Ground Water Protective Layers in Parts of the Western Niger Delta,Nigeria.",
+   "creators": [
+    "Atakpo, E.A"
+   ],
+   "contributor_advisor": "",
+   "date": "2008",
+   "type": "Thesis",
+   "subjects": [
+    "Niger Delta",
+    "Hydrocarbon",
+    "Ground Water",
+    "Geoelecric Mapping",
+    "Contamination",
+    "Research Subject Categories::SOCIAL SCIENCES"
+   ],
+   "publisher": "School of Postgraduate Studies University of Lagos.",
+   "language": "en",
+   "abstract": "",
+   "abstract_status": "missing",
+   "faculty": "Faculty of Social Science",
+   "community": "Theses and Dissertations",
+   "files": [
+    {
+     "name": "Geoelectric Mapping of Hydrocarbon Contamination and Characterization of Ground Water Protective Layers in Parts of the Western Niger Delta,Nigeria..pdf",
+     "size_mb": 5.75
+    }
+   ],
+   "batch": "extension",
+   "notes": "Abstract blank on the page. Type field blank. Collection shown on page is Faculty of Social Science although the subject is geophysics (kept as shown). Keyword 'Geoelecric' misspelt on the page."
+  },
+  {
+   "handle": "",
+   "url": "https://ir.unilag.edu.ng/items/405daead-5b76-4779-b7db-5188655e8ba0",
+   "title": "The Late Quaternary vegetational and environmental history of western tropical Africa: the eastern Benin Basin, Lagos, Nigeria",
+   "creators": [
+    "Adeonipekun, P. A.",
+    "Adeniyi, T. A.",
+    "Mateawo, J.",
+    "Agbalaya, B."
+   ],
+   "contributor_advisor": "",
+   "date": "",
+   "type": "Article",
+   "subjects": [],
+   "publisher": "AGH University of Science and Technology; Faculty of Geology, Geophysics and Environmental Protection, Krakow Poland.",
+   "language": "en",
+   "abstract": "Palynological study of a 30 m borehole at the Akoka campus reconstructing vegetation and climate over roughly the last 35,000 years.",
+   "abstract_status": "real",
+   "faculty": "Staff Publications",
+   "community": "Staff Publications",
+   "files": [],
+   "batch": "extension",
+   "notes": "Date field blank (citation gives 2017, Geology, Geophysics and Environment 43(4)). Authors from the citation line."
+  },
+  {
+   "handle": "",
+   "url": "https://ir.unilag.edu.ng/items/aa8e8fb0-fdfc-4c82-b44a-009a40290336",
+   "title": "Sustainable generation of bioethanol from sugarcane wastes by Streptomyces coelicolor strain COB KF977550 isolated from a tropical estuary.",
+   "creators": [
+    "Buraimoh, O.M.",
+    "Ogunyemi, A.K.",
+    "Isanbor, C.",
+    "Aina, O.S.",
+    "Amund, O.O.",
+    "Ilori, M.O.",
+    "Familoni, O.B."
+   ],
+   "contributor_advisor": "",
+   "date": "2021",
+   "type": "Article",
+   "subjects": [],
+   "publisher": "Elsevier B.V. on behalf of African Institute of Mathematical Sciences / Next Einstein Initiative",
+   "language": "en",
+   "abstract": "Uses sugarcane bagasse as a substrate for a Streptomyces strain, producing about 43 g/L of ethanol and ten organic acid by-products.",
+   "abstract_status": "real",
+   "faculty": "Staff Publications",
+   "community": "Staff Publications",
+   "files": [],
+   "batch": "extension",
+   "notes": "Year from the citation line (Scientific African 11, 1-7). Description blank."
+  },
+  {
+   "handle": "",
+   "url": "https://ir.unilag.edu.ng/items/c6cd679e-e74d-4ebf-acd1-cb5cfb8b370d",
+   "title": "Emotional labour, women's vulnerability and risk factors in the Nigerian banking sector: counselling implications",
+   "creators": [
+    "Ahimie, B."
+   ],
+   "contributor_advisor": "",
+   "date": "",
+   "type": "Article",
+   "subjects": [],
+   "publisher": "Journal of the Department of Guidance and Counselling, faculty of Education, Ambrose Alli university, Ekpoma- Nigeria",
+   "language": "en",
+   "abstract": "Qualitative study of three female bank employees on risk factors, emotional labour and vulnerability; suggests counselling could build a caring organisational culture.",
+   "abstract_status": "real",
+   "faculty": "Staff Publications",
+   "community": "Staff Publications",
+   "files": [],
+   "batch": "extension",
+   "notes": "Date field blank (citation gives 2009, Nigerian Journal of Counselling and Human Development). Author from the citation line. The publisher field holds a journal and department name."
+  },
+  {
+   "handle": "123456789/11994",
+   "url": "https://ir.unilag.edu.ng/items/41c99d3e-bdcc-4148-8aad-030dde9b89dc",
+   "title": "Influence of Students' Industrial Work Experience Scheme on entrepreneurial knowledge of vocational and technology education undergraduates in Lagos State",
+   "creators": [
+    "Amoda, M.B.",
+    "Alao, O.E."
+   ],
+   "contributor_advisor": "",
+   "date": "2021",
+   "type": "Article",
+   "subjects": [],
+   "publisher": "Department of Arts and Social Sciences Education, Faculty of Education, University of Lagos, NIgeria.",
+   "language": "en",
+   "abstract": "Survey of 132 final-year vocational and technology education undergraduates found that SIWES largely met its employability and entrepreneurship goals but the curriculum needs review.",
+   "abstract_status": "real",
+   "faculty": "Staff Publications",
+   "community": "Staff Publications",
+   "files": [
+    {
+     "name": "INFLUENCE OF SIWES ON ENTREPRENEURIAL EMPOWERMENT OF TVET UNDERGRADUATES IN NIGERIA.pdf",
+     "size_mb": 6.74
+    }
+   ],
+   "batch": "extension",
+   "notes": "Keywords and Description blank. Collection shown on page: Arts and Social Science Education- Scholarly Publications. Published in UNILAG Journal of Curriculum and Instruction 2(1), 69-84."
+  },
+  {
+   "handle": "123456789/7563",
+   "url": "https://ir.unilag.edu.ng/items/ad12c109-aa9f-4b6d-9295-a15e81bea67c",
+   "title": "Towards the Specification of Windows Sizes for Natural Ventilation in Classrooms in a Warn Climate, Nigeria",
+   "creators": [
+    "Olufowobi, M. B.",
+    "Adenuga, O. A."
+   ],
+   "contributor_advisor": "",
+   "date": "2012",
+   "type": "Article",
+   "subjects": [
+    "Warm Climate",
+    "Thermal Comfort",
+    "Ventilation",
+    "Humidity",
+    "Research Subject Categories::TECHNOLOGY::Civil engineering and architecture::Building engineering"
+   ],
+   "publisher": "",
+   "language": "en",
+   "abstract": "Proposes a method for setting window openings and orientation for air movement and thermal comfort in classrooms, and estimates average indoor air speeds.",
+   "abstract_status": "real",
+   "faculty": "Staff Publications",
+   "community": "Staff Publications",
+   "files": [
+    {
+     "name": "TOWARDS THE SPECIFICATION OF WINDOWS SIZES FOR NATURAL51-86-1-SM.pdf",
+     "size_mb": 1.03
+    }
+   ],
+   "batch": "extension",
+   "notes": "Publisher blank. 'Warn' in the title is as shown on the page. Journal of Building Performance 3(1). Collection shown on page: Building- Staff Publications."
+  },
+  {
+   "handle": "",
+   "url": "https://ir.unilag.edu.ng/items/a859bc5d-568e-4690-b11c-c8aa3e3739bf",
+   "title": "Student's perception of character education and social values for greater productivity in social studies education",
+   "creators": [
+    "Olatunde, F."
+   ],
+   "contributor_advisor": "",
+   "date": "2016-10",
+   "type": "Article",
+   "subjects": [
+    "Students’ Perception",
+    "Character Education",
+    "Social Values",
+    "Productivity",
+    "Social Studies Education",
+    "Research Subject Categories::SOCIAL SCIENCES::Social sciences::Education"
+   ],
+   "publisher": "SOCIAL STUDIES ASSOCIATION OF NIGERIA (SOSAN)",
+   "language": "en",
+   "abstract": "Descriptive survey of 300 students in four Lagos State colleges of education found significant links between character education, social values and productivity.",
+   "abstract_status": "real",
+   "faculty": "Staff Publications",
+   "community": "Staff Publications",
+   "files": [],
+   "batch": "extension",
+   "notes": "The page repeats the keyword list in a second, lower-case form; kept once. Nigerian Journal of Social Studies 19(2)."
+  },
+  {
+   "handle": "",
+   "url": "https://ir.unilag.edu.ng/items/c771000a-ef97-42bf-9211-232a7263a89a",
+   "title": "Persistent Poverty, Unemployment and Social Exclusion in Nigeria: Challenges and Policy Options",
+   "creators": [
+    "Fashola M.A",
+    "Nwakeze N.M.",
+    "Ogunniyi, M.B."
+   ],
+   "contributor_advisor": "",
+   "date": "",
+   "type": "Article",
+   "subjects": [],
+   "publisher": "",
+   "language": "en",
+   "abstract": "Examines how social exclusion and unemployment sustain poverty in Nigeria, finds that high employment does not reduce poverty because of underemployment, and recommends youth empowerment.",
+   "abstract_status": "real",
+   "faculty": "Staff Publications",
+   "community": "Staff Publications",
+   "files": [],
+   "batch": "extension",
+   "notes": "Date and Publisher fields blank (citation gives 2013, OGUAA Journal of Social Sciences 7(1), 176-199). Authors from the citation line."
+  },
+  {
+   "handle": "",
+   "url": "https://ir.unilag.edu.ng/items/42f0394b-a604-4a62-aa6d-06aa97673d62",
+   "title": "Genital Injuries in Civil Urban Population",
+   "creators": [
+    "Osegbe D.N",
+    "Ekeke O.N",
+    "Ukpong A.E",
+    "Adegbola, O.",
+    "Kanu O.O",
+    "Ogunbamise O.O."
+   ],
+   "contributor_advisor": "",
+   "date": "",
+   "type": "Article",
+   "subjects": [],
+   "publisher": "Lagos Journal of Surgery- Department of Surgery, College of Medicine, University of Lagos",
+   "language": "en",
+   "abstract": "Assesses the pattern of genital injuries in an urban Nigerian population using 34 evaluable patients managed in the authors' service.",
+   "abstract_status": "real",
+   "faculty": "Staff Publications",
+   "community": "Staff Publications",
+   "files": [],
+   "batch": "extension",
+   "notes": "Date field blank (citation gives 1999, Lagos Journal of Surgery 2(1):3-10). Authors from the citation line."
+  }
+ ]
+}

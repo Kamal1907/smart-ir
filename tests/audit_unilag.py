@@ -5,7 +5,10 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from app import quality, dedup
 
 HERE = os.path.dirname(os.path.abspath(__file__))
+ALL = "--all" in sys.argv  # default: the thesis audit sample only; --all adds the extension batch (theses only)
 data = json.load(open(os.path.join(HERE, "..", "data", "unilag_records.json"), encoding="utf-8"))
+if ALL:
+    data["records"] += json.load(open(os.path.join(HERE, "..", "data", "unilag_records_extension.json"), encoding="utf-8"))["records"]
 
 def to_item(r):
     return {"title": r["title"], "creators": r["creators"], "advisor": r["contributor_advisor"], "date_issued": r["date"],
@@ -54,7 +57,8 @@ summary = {"records": n, "theses": len(theses),
   "grades_before": Counter(quality.grade(r["before"]) for r in rows), "grades_after": Counter(quality.grade(r["after"]) for r in rows)}
 out = {"summary": summary, "field_level": field, "publisher_forms": pubs, "issue_types": issue_types.most_common(),
        "duplicates": dups, "records": rows, "community_counts": data["community_counts"], "registry": data["registry_facts"]}
-os.makedirs(os.path.join(HERE, "results"), exist_ok=True)
-json.dump(out, open(os.path.join(HERE, "results", "unilag_audit.json"), "w"), indent=1)
+if not ALL:  # --all is informational and must not overwrite the thesis result file
+    os.makedirs(os.path.join(HERE, "results"), exist_ok=True)
+    json.dump(out, open(os.path.join(HERE, "results", "unilag_audit.json"), "w"), indent=1)
 print(json.dumps({k: out[k] for k in ("summary","field_level","publisher_forms","duplicates")}, indent=1))
 print(issue_types.most_common(12))

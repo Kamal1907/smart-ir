@@ -92,9 +92,9 @@ def test_tc03_faculty_facet():
 @req("FR1")
 def test_tc04_year_range():
     """Filter by year range 2014 to 2014.
-    Only items issued in 2014 are returned (3 results)."""
+    Only items issued in 2014 are returned (3 in the audit sample plus 1 in the extension batch = 4 results)."""
     r = client().get("/search", params={"year_from": "2014", "year_to": "2014"})
-    assert "3 results" in r.text
+    assert "4 results" in r.text
 
 
 @req("FR1")

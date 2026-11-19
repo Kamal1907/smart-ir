@@ -33,6 +33,7 @@ CREATE TABLE IF NOT EXISTS items (
     embargo_until TEXT DEFAULT '',
     source_url TEXT DEFAULT '',
     origin TEXT DEFAULT 'local',     -- unilag | local | demo
+    batch TEXT DEFAULT '',           -- audit_sample | extension (UNILAG records only)
     status TEXT NOT NULL DEFAULT 'submitted'
         CHECK (status IN ('submitted','returned','published','withdrawn')),
     review_note TEXT DEFAULT '',
@@ -116,6 +117,8 @@ def get_conn():
 def init_db(path=None):
     conn = connect(path)
     conn.executescript(SCHEMA)
+    if "batch" not in [r[1] for r in conn.execute("PRAGMA table_info(items)")]:
+        conn.execute("ALTER TABLE items ADD COLUMN batch TEXT DEFAULT ''")  # databases created before this column
     conn.commit()
     conn.close()
 

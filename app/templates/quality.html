@@ -1,6 +1,6 @@
 {% extends "base.html" %}{% block title %}Metadata quality{% endblock %}{% block content %}
 <h1>Metadata quality audit</h1>
-<p><a href="/quality" class="chip">All published</a><a href="/quality?origin=unilag" class="chip">UNILAG records only</a><a href="/quality?origin=local" class="chip">Submitted through SmartIR</a>{% if origin %} | showing <b>{{ origin }}</b>{% endif %}</p>
+<p><a href="/quality" class="chip">All published</a><a href="/quality?origin=unilag" class="chip">UNILAG records only</a><a href="/quality?sample=thesis_audit" class="chip">Thesis audit sample (10 theses)</a><a href="/quality?origin=local" class="chip">Submitted through SmartIR</a>{% if origin %} | showing <b>{{ origin }}</b>{% elif sample %} | showing <b>thesis audit sample</b>{% endif %}</p>
 <div class="grid g4"><div class="card"><div class="stat">{{ summary.n }}<small>Records audited</small></div></div>
 <div class="card"><div class="stat">{{ summary.completeness }}%<small>Mean completeness</small></div></div>
 <div class="card"><div class="stat">{{ summary.conformance }}%<small>Mean conformance</small></div></div>

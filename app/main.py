@@ -544,13 +544,15 @@ def review_action(request: Request, item_id: int, action: str = Form(...), note:
 
 # ------------------------------------------------------------------ quality audit
 @app.get("/quality", response_class=HTMLResponse)
-def quality_audit(request: Request, origin: str = ""):
+def quality_audit(request: Request, origin: str = "", sample: str = ""):
     require(request, "librarian")
     with db.get_conn() as c:
         sql = "SELECT * FROM items WHERE status='published'"
         params = []
         if origin:
             sql += " AND origin=?"; params.append(origin)
+        if sample == "thesis_audit":  # the 10 theses reported in the thesis
+            sql += " AND origin='unilag' AND batch='audit_sample' AND item_type='Thesis'"
         items = [db.row_to_item(r) for r in c.execute(sql, params)]
     rows, issue_counter, field_missing = [], Counter(), Counter()
     for it in items:
@@ -573,7 +575,7 @@ def quality_audit(request: Request, origin: str = ""):
     rows.sort(key=lambda x: x[1]["overall"])
     return render(request, "quality.html", rows=rows[:200], summary=summary,
                   issues=issue_counter.most_common(15), missing=field_missing.most_common(),
-                  pairs=pairs, origin=origin)
+                  pairs=pairs, origin=origin, sample=sample)
 
 
 # ------------------------------------------------------------------ analytics

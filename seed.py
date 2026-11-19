@@ -22,10 +22,15 @@ USERS = [
 PASSWORD = "Demo@2026"
 
 
+UNILAG_FILES = ["unilag_records.json", "unilag_records_extension.json"]
+
+
 def load_unilag(c):
-    data = json.load(open(os.path.join(HERE, "data", "unilag_records.json"), encoding="utf-8"))
+    records = []
+    for fn in UNILAG_FILES:
+        records += json.load(open(os.path.join(HERE, "data", fn), encoding="utf-8"))["records"]
     n = 0
-    for r in data["records"]:
+    for r in records:
         if c.execute("SELECT 1 FROM items WHERE source_url=?", (r["url"],)).fetchone():
             continue
         item = {
@@ -37,11 +42,11 @@ def load_unilag(c):
         q = quality.check(item)
         cur = c.execute(
             "INSERT INTO items(handle,title,creators,advisor,date_issued,item_type,subjects,abstract,publisher,"
-            "language,faculty,rights,source_url,origin,status,quality_score) "
-            "VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,'unilag','published',?)",
+            "language,faculty,rights,source_url,origin,batch,status,quality_score) "
+            "VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,'unilag',?,'published',?)",
             (r["handle"] or None, r["title"], json.dumps(r["creators"]), r["contributor_advisor"], r["date"],
              r["type"], json.dumps(r["subjects"]), r["abstract"], r["publisher"], r["language"], r["faculty"],
-             "open", r["url"], q["overall"]))
+             "open", r["url"], r["batch"], q["overall"]))
         for f in r.get("files", []):
             c.execute("INSERT INTO files(item_id,filename,stored_name,size_bytes) VALUES (?,?,?,?)",
                       (cur.lastrowid, f["name"], "", int(f["size_mb"] * 1048576)))
