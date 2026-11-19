@@ -1,6 +1,6 @@
 # SmartIR: Smart Institutional Repository Prototype
 
-A working prototype of a smart institutional repository for research publications, using the University of Lagos as the case study. It was built for an MSc research project on the design and implementation of a smart institutional repository.
+A working prototype of a smart institutional repository for research publications, using the University of Lagos as the case study. It was built for a Master's in Information Management research project on the design and implementation of a smart institutional repository.
 
 ## What it does
 
