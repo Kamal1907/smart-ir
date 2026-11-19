@@ -1,0 +1,389 @@
+{
+ "run_at": "2026-11-19 15:47:06",
+ "results": [
+  {
+   "id": "TC01",
+   "requirement": "FR1",
+   "description": "Keyword search for 'lungfish' returns the matching UNILAG thesis.",
+   "expected": "The lungfish thesis is listed in the results.",
+   "result": "Pass",
+   "duration_ms": 42.5
+  },
+  {
+   "id": "TC02",
+   "requirement": "FR1",
+   "description": "Search by author surname 'Kemjika'.",
+   "expected": "The 1989 Faculty of Education thesis by Kemjika is returned.",
+   "result": "Pass",
+   "duration_ms": 15.8
+  },
+  {
+   "id": "TC03",
+   "requirement": "FR1",
+   "description": "Filter results by the faculty facet 'Faculty of Pharmacy'.",
+   "expected": "Only the Faculty of Pharmacy item is shown (1 result).",
+   "result": "Pass",
+   "duration_ms": 8.3
+  },
+  {
+   "id": "TC04",
+   "requirement": "FR1",
+   "description": "Filter by year range 2014 to 2014.",
+   "expected": "Only items issued in 2014 are returned (3 results).",
+   "result": "Pass",
+   "duration_ms": 10.7
+  },
+  {
+   "id": "TC05",
+   "requirement": "FR1",
+   "description": "Search for 'model' where the title only contains the word 'Modelling'.",
+   "expected": "Porter stemming returns the traffic congestion thesis.",
+   "result": "Pass",
+   "duration_ms": 16.1
+  },
+  {
+   "id": "TC06",
+   "requirement": "FR1",
+   "description": "Search for a nonsense term.",
+   "expected": "The system reports no results without an error.",
+   "result": "Pass",
+   "duration_ms": 12.8
+  },
+  {
+   "id": "TC07",
+   "requirement": "FR1",
+   "description": "Search with SQL and FTS control characters.",
+   "expected": "The query is handled safely and the page loads (HTTP 200).",
+   "result": "Pass",
+   "duration_ms": 20.5
+  },
+  {
+   "id": "TC08",
+   "requirement": "FR1",
+   "description": "Matched terms are highlighted in result snippets.",
+   "expected": "The result contains a <mark> element around the search term.",
+   "result": "Pass",
+   "duration_ms": 12.9
+  },
+  {
+   "id": "TC09",
+   "requirement": "FR2",
+   "description": "Open an item page.",
+   "expected": "Dublin Core fields (dc.title, dc.creator, dc.date.issued, dc.subject) are displayed.",
+   "result": "Pass",
+   "duration_ms": 21.2
+  },
+  {
+   "id": "TC10",
+   "requirement": "FR2",
+   "description": "An anonymous user requests an item still under review.",
+   "expected": "The system returns 404 so unreviewed work is not exposed.",
+   "result": "Pass",
+   "duration_ms": 79.0
+  },
+  {
+   "id": "TC11",
+   "requirement": "FR2",
+   "description": "Export a citation in APA and BibTeX.",
+   "expected": "APA text appears on the item page and a valid @phdthesis BibTeX entry is downloaded.",
+   "result": "Pass",
+   "duration_ms": 25.1
+  },
+  {
+   "id": "TC12",
+   "requirement": "FR2",
+   "description": "The item page lists related items using shared subjects and faculty.",
+   "expected": "At least one related item is shown for a Faculty of Arts thesis.",
+   "result": "Pass",
+   "duration_ms": 13.5
+  },
+  {
+   "id": "TC13",
+   "requirement": "FR3",
+   "description": "Log in with valid librarian credentials.",
+   "expected": "The user is redirected and the review queue is accessible.",
+   "result": "Pass",
+   "duration_ms": 62.6
+  },
+  {
+   "id": "TC14",
+   "requirement": "FR3",
+   "description": "Log in with a wrong password.",
+   "expected": "Access is refused with an error message.",
+   "result": "Pass",
+   "duration_ms": 45.7
+  },
+  {
+   "id": "TC15",
+   "requirement": "FR3",
+   "description": "A depositor tries to open the librarian review queue.",
+   "expected": "Access is denied (HTTP 403).",
+   "result": "Pass",
+   "duration_ms": 52.3
+  },
+  {
+   "id": "TC16",
+   "requirement": "FR3",
+   "description": "An anonymous user opens the submission form.",
+   "expected": "The user is redirected to the login page.",
+   "result": "Pass",
+   "duration_ms": 7.0
+  },
+  {
+   "id": "TC17",
+   "requirement": "FR3",
+   "description": "Log in with an external 'next' address.",
+   "expected": "The user is sent to the home page, not the external site.",
+   "result": "Pass",
+   "duration_ms": 42.9
+  },
+  {
+   "id": "TC18",
+   "requirement": "FR4",
+   "description": "A depositor submits a complete thesis record.",
+   "expected": "The item is saved with status 'submitted' and a quality score.",
+   "result": "Pass",
+   "duration_ms": 80.5
+  },
+  {
+   "id": "TC19",
+   "requirement": "FR4",
+   "description": "Submit a record with the date '16/11/2026'.",
+   "expected": "Submission is blocked and the ISO 8601 error is shown.",
+   "result": "Pass",
+   "duration_ms": 60.1
+  },
+  {
+   "id": "TC20",
+   "requirement": "FR4",
+   "description": "Upload a .docx file as the full text.",
+   "expected": "The file is rejected with the message 'Only PDF files are accepted'.",
+   "result": "Pass",
+   "duration_ms": 55.0
+  },
+  {
+   "id": "TC21",
+   "requirement": "FR4",
+   "description": "Upload a PDF containing the word 'mangroveflux' and publish it.",
+   "expected": "The item is found by full-text search for a word that appears only inside the PDF.",
+   "result": "Pass",
+   "duration_ms": 298.8
+  },
+  {
+   "id": "TC22",
+   "requirement": "FR5",
+   "description": "Check a UNILAG record whose abstract reads 'Full text attached'.",
+   "expected": "The engine flags the abstract as a placeholder.",
+   "result": "Pass",
+   "duration_ms": 0.4
+  },
+  {
+   "id": "TC23",
+   "requirement": "FR5",
+   "description": "Normalise the author form 'Okafor, A.I' found in UNILAG records.",
+   "expected": "The suggested form is 'Okafor, A. I.'.",
+   "result": "Pass",
+   "duration_ms": 0.2
+  },
+  {
+   "id": "TC24",
+   "requirement": "FR5",
+   "description": "Send draft metadata to the live check service.",
+   "expected": "A score, a grade and a list of issues are returned.",
+   "result": "Pass",
+   "duration_ms": 66.8
+  },
+  {
+   "id": "TC25",
+   "requirement": "FR5",
+   "description": "Draft a record about 'Judicial Corruption' without subjects.",
+   "expected": "The existing vocabulary term 'Judicial Corruption' is suggested.",
+   "result": "Pass",
+   "duration_ms": 103.3
+  },
+  {
+   "id": "TC26",
+   "requirement": "FR6",
+   "description": "Run the duplicate report over the loaded UNILAG records.",
+   "expected": "The two 'Cement Dust' records deposited separately in the live repository are flagged.",
+   "result": "Pass",
+   "duration_ms": 232.7
+  },
+  {
+   "id": "TC27",
+   "requirement": "FR6",
+   "description": "Compare two different theses from the same faculty.",
+   "expected": "They are not flagged as duplicates.",
+   "result": "Pass",
+   "duration_ms": 1.0
+  },
+  {
+   "id": "TC28",
+   "requirement": "FR6",
+   "description": "A depositor drafts a record with a near-identical title to an existing thesis.",
+   "expected": "The live check returns the existing item as a possible duplicate.",
+   "result": "Pass",
+   "duration_ms": 147.4
+  },
+  {
+   "id": "TC29",
+   "requirement": "FR7",
+   "description": "A librarian approves a submitted item.",
+   "expected": "The item becomes publicly visible and searchable.",
+   "result": "Pass",
+   "duration_ms": 434.2
+  },
+  {
+   "id": "TC30",
+   "requirement": "FR7",
+   "description": "A librarian returns an item without a note.",
+   "expected": "The action is refused because a note to the depositor is required.",
+   "result": "Pass",
+   "duration_ms": 304.5
+  },
+  {
+   "id": "TC31",
+   "requirement": "FR7",
+   "description": "A returned item is corrected by the depositor and resubmitted.",
+   "expected": "The status changes from 'returned' back to 'submitted'.",
+   "result": "Pass",
+   "duration_ms": 440.9
+  },
+  {
+   "id": "TC32",
+   "requirement": "FR7",
+   "description": "A depositor tries to edit an item that is already published.",
+   "expected": "The edit is refused (HTTP 403).",
+   "result": "Pass",
+   "duration_ms": 162.3
+  },
+  {
+   "id": "TC33",
+   "requirement": "FR7",
+   "description": "Every workflow action is written to the audit log.",
+   "expected": "The review page history lists 'submitted' and 'approve' actions.",
+   "result": "Pass",
+   "duration_ms": 417.6
+  },
+  {
+   "id": "TC34",
+   "requirement": "FR7",
+   "description": "A librarian applies automatic normalisation to a UNILAG record.",
+   "expected": "Author forms are corrected and the quality score increases.",
+   "result": "Pass",
+   "duration_ms": 216.9
+  },
+  {
+   "id": "TC35",
+   "requirement": "FR8",
+   "description": "Download the file of an embargoed item.",
+   "expected": "The download is refused (HTTP 403) while metadata stays visible.",
+   "result": "Pass",
+   "duration_ms": 442.5
+  },
+  {
+   "id": "TC36",
+   "requirement": "FR9",
+   "description": "Send the OAI-PMH Identify request.",
+   "expected": "The response validates against the official OAI-PMH 2.0 XML schema.",
+   "result": "Pass",
+   "duration_ms": 17.1
+  },
+  {
+   "id": "TC37",
+   "requirement": "FR9",
+   "description": "Send ListRecords with metadataPrefix oai_dc.",
+   "expected": "The response is schema-valid and contains only published records.",
+   "result": "Pass",
+   "duration_ms": 70.6
+  },
+  {
+   "id": "TC38",
+   "requirement": "FR9",
+   "description": "Validate the Dublin Core block of a GetRecord response.",
+   "expected": "The oai_dc element validates against the oai_dc schema.",
+   "result": "Pass",
+   "duration_ms": 107.0
+  },
+  {
+   "id": "TC39",
+   "requirement": "FR9",
+   "description": "Send an illegal verb.",
+   "expected": "The badVerb error code is returned in a schema-valid response.",
+   "result": "Pass",
+   "duration_ms": 12.7
+  },
+  {
+   "id": "TC40",
+   "requirement": "FR9",
+   "description": "Send GetRecord without the identifier argument.",
+   "expected": "The badArgument error code is returned.",
+   "result": "Pass",
+   "duration_ms": 11.6
+  },
+  {
+   "id": "TC41",
+   "requirement": "FR9",
+   "description": "Request a record identifier that does not exist.",
+   "expected": "The idDoesNotExist error code is returned.",
+   "result": "Pass",
+   "duration_ms": 22.5
+  },
+  {
+   "id": "TC42",
+   "requirement": "FR9",
+   "description": "Request an unsupported metadata format (marc21).",
+   "expected": "The cannotDisseminateFormat error code is returned.",
+   "result": "Pass",
+   "duration_ms": 16.0
+  },
+  {
+   "id": "TC43",
+   "requirement": "FR9",
+   "description": "Harvest only the set fac_faculty_of_education.",
+   "expected": "Every returned header carries that setSpec.",
+   "result": "Pass",
+   "duration_ms": 22.1
+  },
+  {
+   "id": "TC44",
+   "requirement": "FR9",
+   "description": "Harvest a list larger than one page (more than 50 records) using resumption tokens.",
+   "expected": "Every record is retrieved once across pages and each page is schema-valid.",
+   "result": "Pass",
+   "duration_ms": 108.6
+  },
+  {
+   "id": "TC45",
+   "requirement": "FR9",
+   "description": "Harvest with from=2999-01-01 (a future date).",
+   "expected": "The noRecordsMatch error code is returned.",
+   "result": "Pass",
+   "duration_ms": 23.3
+  },
+  {
+   "id": "TC46",
+   "requirement": "FR10",
+   "description": "View an item three times.",
+   "expected": "The item view counter increases by three.",
+   "result": "Pass",
+   "duration_ms": 122.0
+  },
+  {
+   "id": "TC47",
+   "requirement": "FR10",
+   "description": "Run a search that has no matching items.",
+   "expected": "The term appears under 'Searches with no results' on the analytics page.",
+   "result": "Pass",
+   "duration_ms": 217.9
+  },
+  {
+   "id": "TC48",
+   "requirement": "FR10",
+   "description": "A depositor opens the analytics dashboard.",
+   "expected": "Access is denied (HTTP 403).",
+   "result": "Pass",
+   "duration_ms": 131.7
+  }
+ ]
+}

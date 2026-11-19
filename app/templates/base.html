@@ -1,0 +1,13 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{% block title %}SmartIR{% endblock %} | SmartIR</title><link rel="stylesheet" href="/static/style.css"></head><body>
+<header class="top"><div class="wrap">
+<a class="logo" href="/">SmartIR<small>Smart Institutional Repository (University of Lagos case study)</small></a>
+<nav><a href="/search">Browse and search</a><a href="/about">About</a>
+{% if user %}<a href="/submit">Submit work</a><a href="/my">My submissions</a>
+{% if user.role in ['librarian','admin'] %}<a href="/review">Review queue</a><a href="/quality">Metadata quality</a><a href="/analytics">Analytics</a>{% endif %}{% endif %}
+<a href="/oai?verb=Identify">OAI-PMH</a></nav>
+<div class="who">{% if user %}{{ user.full_name }} ({{ user.role }}) | <a href="/logout">Log out</a>{% else %}<a href="/login">Log in</a>{% endif %}</div>
+</div></header>
+<main class="wrap">{% block content %}{% endblock %}</main>
+<footer><div class="wrap">SmartIR prototype for academic research. Records marked "UNILAG record" were transcribed from the public University of Lagos Institutional Repository (ir.unilag.edu.ng) for demonstration. Metadata harvestable at /oai (OAI-PMH 2.0, oai_dc).</div></footer>
+</body></html>

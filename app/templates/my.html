@@ -1,0 +1,5 @@
+{% extends "base.html" %}{% block title %}My submissions{% endblock %}{% block content %}
+<h1>My submissions</h1><div class="card"><table><tr><th>Title</th><th>Date</th><th>Status</th><th>Quality</th><th>Librarian note</th><th></th></tr>
+{% for it in items %}<tr><td><a href="/items/{{ it.id }}">{{ it.title }}</a></td><td>{{ it.created_at[:10] }}</td><td><span class="status {{ it.status }}">{{ it.status }}</span></td><td>{{ it.quality_score }}</td><td>{{ it.review_note }}</td>
+<td>{% if it.status=='returned' %}<a class="btn sec" href="/items/{{ it.id }}/edit">Correct and resubmit</a>{% endif %}</td></tr>
+{% else %}<tr><td colspan="6">You have not submitted anything yet. <a href="/submit">Submit your first item</a>.</td></tr>{% endfor %}</table></div>{% endblock %}

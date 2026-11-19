@@ -1,0 +1,13 @@
+{% extends "base.html" %}{% block title %}Metadata quality{% endblock %}{% block content %}
+<h1>Metadata quality audit</h1>
+<p><a href="/quality" class="chip">All published</a><a href="/quality?origin=unilag" class="chip">UNILAG records only</a><a href="/quality?origin=local" class="chip">Submitted through SmartIR</a>{% if origin %} | showing <b>{{ origin }}</b>{% endif %}</p>
+<div class="grid g4"><div class="card"><div class="stat">{{ summary.n }}<small>Records audited</small></div></div>
+<div class="card"><div class="stat">{{ summary.completeness }}%<small>Mean completeness</small></div></div>
+<div class="card"><div class="stat">{{ summary.conformance }}%<small>Mean conformance</small></div></div>
+<div class="card"><div class="stat">{{ summary.overall }}<small>Mean overall score</small></div></div></div>
+<div class="grid g2"><div class="card"><h2 style="margin-top:0">Most frequent issues</h2><table><tr><th>Field</th><th>Issue</th><th>Records</th></tr>
+{% for (field,msg),n in issues %}<tr><td>{{ field }}</td><td>{{ msg }}</td><td>{{ n }}</td></tr>{% endfor %}</table></div>
+<div class="card"><h2 style="margin-top:0">Grade distribution</h2>{% for g in ['Good','Fair','Poor'] %}<div class="barrow"><span class="score {{ g }}">{{ g }}</span><div class="bar" style="width:{{ (100*summary.grades[g]/(summary.n or 1))|round }}%"></div><span>{{ summary.grades[g] }}</span></div>{% endfor %}
+<h2>Possible duplicates</h2>{% for a,b,s in pairs %}<p style="font-size:14px"><a href="/items/{{ a.id }}">#{{ a.id }}</a> and <a href="/items/{{ b.id }}">#{{ b.id }}</a>: {{ a.title }} <span class="meta">({{ (s*100)|round|int }}% similar)</span></p>{% else %}<p class="meta">None detected.</p>{% endfor %}</div></div>
+<div class="card"><h2 style="margin-top:0">Records by score (lowest first)</h2><table><tr><th>ID</th><th>Title</th><th>Completeness</th><th>Conformance</th><th>Overall</th><th>Issues</th></tr>
+{% for it,q in rows %}<tr><td>{{ it.id }}</td><td><a href="/review/{{ it.id }}">{{ it.title }}</a></td><td>{{ q.completeness }}</td><td>{{ q.conformance }}</td><td><span class="score {{ q.grade }}">{{ q.overall }}</span></td><td>{{ q.issues|length }}</td></tr>{% endfor %}</table></div>{% endblock %}

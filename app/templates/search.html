@@ -1,0 +1,24 @@
+{% extends "base.html" %}{% block title %}Search{% endblock %}{% block content %}
+{% macro link(k, v) %}/search?q={{ q|urlencode }}{% for key, val in f.items() %}{% if key != k and val %}&{{ key }}={{ val|urlencode }}{% endif %}{% endfor %}&{{ k }}={{ v|urlencode }}{% endmacro %}
+<form class="searchbar card" action="/search">
+<input name="q" value="{{ q }}" placeholder="Search the repository" aria-label="Search">
+{% for key, val in f.items() %}{% if val and key != 'sort' %}<input type="hidden" name="{{ key }}" value="{{ val }}">{% endif %}{% endfor %}
+<select name="sort" style="width:150px"><option value="relevance">Relevance</option><option value="newest" {% if f.sort=='newest' %}selected{% endif %}>Newest</option><option value="oldest" {% if f.sort=='oldest' %}selected{% endif %}>Oldest</option><option value="title" {% if f.sort=='title' %}selected{% endif %}>Title A to Z</option></select>
+<button>Search</button></form>
+<div class="grid side"><div class="card facet">
+{% if f.faculty or f.type or f.rights or f.year_from or f.year_to %}<p><a href="/search?q={{ q|urlencode }}">Clear all filters</a></p>{% endif %}
+<h3>Faculty</h3>{% for k,n in facets.faculty %}<a href="{{ link('faculty',k) }}"><span>{{ k }}</span><span class="meta">{{ n }}</span></a>{% endfor %}
+<h3>Item type</h3>{% for k,n in facets.type %}<a href="{{ link('type',k) }}"><span>{{ k }}</span><span class="meta">{{ n }}</span></a>{% endfor %}
+<h3>Access</h3>{% for k,n in facets.rights %}<a href="{{ link('rights',k) }}"><span>{{ k|capitalize }}</span><span class="meta">{{ n }}</span></a>{% endfor %}
+<h3>Decade</h3>{% for k,n in facets.decade %}<a href="/search?q={{ q|urlencode }}&year_from={{ k[:4] }}&year_to={{ k[:3] }}9"><span>{{ k }}</span><span class="meta">{{ n }}</span></a>{% endfor %}
+<form action="/search"><input type="hidden" name="q" value="{{ q }}"><h3>Year range</h3>
+<div style="display:flex;gap:6px"><input type="text" name="year_from" value="{{ f.year_from }}" placeholder="From"><input type="text" name="year_to" value="{{ f.year_to }}" placeholder="To"></div><p><button class="btn sec" style="padding:6px 12px">Apply</button></p></form>
+</div><div class="card">
+<div class="meta">{{ total }} result{{ '' if total==1 else 's' }}{% if q %} for "{{ q }}"{% endif %}{% for key in ['faculty','type','rights'] %}{% if f[key] %} | {{ key }}: <b>{{ f[key] }}</b>{% endif %}{% endfor %}</div>
+{% for it in results %}<div class="result"><a class="t" href="/items/{{ it.id }}">{{ it.title }}</a>
+<div class="meta">{{ it.creators|join('; ') }} | {{ it.date_issued }} | {{ it.item_type }} | {{ it.faculty }}{% if it.origin=='unilag' %} | <span class="chip">UNILAG record</span>{% endif %}{% if it.rights!='open' %} | <span class="chip">{{ it.rights }}</span>{% endif %}</div>
+{% if it.snip %}<div style="font-size:14px;margin-top:4px">{{ it.snip|safe }}</div>{% endif %}
+{% for s in it.subjects[:5] %}<span class="chip">{{ s }}</span>{% endfor %}</div>
+{% else %}<p>No items match your search. Try fewer words or remove a filter.</p>{% endfor %}
+{% if pages > 1 %}<div class="pager">{% for p in range(1, pages+1) %}{% if p == page %}<span>{{ p }}</span>{% elif p <= 3 or p > pages-2 or (p-page)|abs < 2 %}<a href="{{ link('page', p) }}">{{ p }}</a>{% endif %}{% endfor %}</div>{% endif %}
+</div></div>{% endblock %}

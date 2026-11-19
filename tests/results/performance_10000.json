@@ -1,0 +1,76 @@
+{
+ "records": 10015,
+ "seed_seconds": 2.3,
+ "cpu": 2,
+ "search_keyword": {
+  "n": 100,
+  "mean_ms": 61.7,
+  "p50_ms": 66.8,
+  "p95_ms": 81.8,
+  "max_ms": 94.1
+ },
+ "search_faceted": {
+  "n": 100,
+  "mean_ms": 38.2,
+  "p50_ms": 40.7,
+  "p95_ms": 49.3,
+  "max_ms": 52.9
+ },
+ "browse_no_query": {
+  "n": 50,
+  "mean_ms": 31.0,
+  "p50_ms": 30.8,
+  "p95_ms": 36.4,
+  "max_ms": 41.0
+ },
+ "item_page": {
+  "n": 100,
+  "mean_ms": 18.1,
+  "p50_ms": 17.6,
+  "p95_ms": 22.0,
+  "max_ms": 27.3
+ },
+ "oai_listrecords_page": {
+  "n": 30,
+  "mean_ms": 5.6,
+  "p50_ms": 5.4,
+  "p95_ms": 6.7,
+  "max_ms": 7.0
+ },
+ "oai_getrecord": {
+  "n": 50,
+  "mean_ms": 4.0,
+  "p50_ms": 3.9,
+  "p95_ms": 4.9,
+  "max_ms": 5.1
+ },
+ "full_harvest_identifiers": {
+  "pages": 201,
+  "identifiers": 10015,
+  "seconds": 0.72
+ },
+ "concurrent_20_users": {
+  "users": 20,
+  "requests": 500,
+  "errors": 0,
+  "seconds": 9.74,
+  "throughput_rps": 51.3,
+  "n": 500,
+  "mean_ms": 336.5,
+  "p50_ms": 148.9,
+  "p95_ms": 1294.0,
+  "max_ms": 3972.0
+ },
+ "concurrent_50_users": {
+  "users": 50,
+  "requests": 1000,
+  "errors": 0,
+  "seconds": 20.16,
+  "throughput_rps": 49.6,
+  "n": 1000,
+  "mean_ms": 847.7,
+  "p50_ms": 377.5,
+  "p95_ms": 3543.9,
+  "max_ms": 12650.9
+ }
+}

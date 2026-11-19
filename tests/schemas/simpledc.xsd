@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Local transcription of the DCMI simpledc schema (http://dublincore.org/schemas/xmls/simpledc20021212.xsd) for offline validation. -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://purl.org/dc/elements/1.1/"
+  targetNamespace="http://purl.org/dc/elements/1.1/" elementFormDefault="qualified" attributeFormDefault="unqualified">
+  <xs:complexType name="elementType"><xs:simpleContent><xs:extension base="xs:string"><xs:anyAttribute namespace="http://www.w3.org/XML/1998/namespace" processContents="lax"/></xs:extension></xs:simpleContent></xs:complexType>
+  <xs:element name="any" type="elementType" abstract="true"/>
+  <xs:element name="title" substitutionGroup="any"/><xs:element name="creator" substitutionGroup="any"/>
+  <xs:element name="subject" substitutionGroup="any"/><xs:element name="description" substitutionGroup="any"/>
+  <xs:element name="publisher" substitutionGroup="any"/><xs:element name="contributor" substitutionGroup="any"/>
+  <xs:element name="date" substitutionGroup="any"/><xs:element name="type" substitutionGroup="any"/>
+  <xs:element name="format" substitutionGroup="any"/><xs:element name="identifier" substitutionGroup="any"/>
+  <xs:element name="source" substitutionGroup="any"/><xs:element name="language" substitutionGroup="any"/>
+  <xs:element name="relation" substitutionGroup="any"/><xs:element name="coverage" substitutionGroup="any"/>
+  <xs:element name="rights" substitutionGroup="any"/>
+</xs:schema>

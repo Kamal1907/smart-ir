@@ -1,0 +1,39 @@
+{% extends "base.html" %}{% block title %}{{ 'Edit item' if edit else 'Submit work' }}{% endblock %}{% block content %}
+<h1>{{ 'Edit item' if edit else 'Submit a research output' }}</h1>
+{% if error %}<div class="alert err">{{ error }}</div>{% endif %}
+{% if it and it.review_note and it.status=='returned' %}<div class="alert warn"><b>Librarian note:</b> {{ it.review_note }}</div>{% endif %}
+<div class="grid" style="grid-template-columns:1fr 340px">
+<form class="card" method="post" enctype="multipart/form-data" action="{{ '/items/%d/edit'|format(it.id) if edit else '/submit' }}" id="sf">
+<label>Title <span class="req">*</span></label><input type="text" name="title" required value="{{ it.title if it else '' }}">
+<label>Authors <span class="req">*</span> <small>one per line, as Surname, I. I.</small></label><textarea name="creators" required style="min-height:70px">{{ it.creators|join('\n') if it else '' }}</textarea>
+<div class="grid g2"><div><label>Supervisor or advisor <small>for theses</small></label><input type="text" name="advisor" value="{{ it.advisor if it else '' }}"></div>
+<div><label>Date issued <span class="req">*</span> <small>YYYY or YYYY-MM-DD</small></label><input type="text" name="date_issued" value="{{ it.date_issued if it else '' }}"></div></div>
+<div class="grid g2"><div><label>Item type <span class="req">*</span></label><select name="item_type"><option value="">Select</option>{% for t in types %}<option {% if it and it.item_type==t %}selected{% endif %}>{{ t }}</option>{% endfor %}</select></div>
+<div><label>Faculty</label><select name="faculty"><option value="">Select</option>{% for fa in faculties %}<option {% if it and it.faculty==fa %}selected{% endif %}>{{ fa }}</option>{% endfor %}</select></div></div>
+<label>Department</label><input type="text" name="department" value="{{ it.department if it else '' }}">
+<label>Abstract <span class="req">*</span></label><textarea name="abstract">{{ it.abstract if it else '' }}</textarea>
+<label>Subject keywords <span class="req">*</span> <small>separate with semicolons; at least three</small></label><input type="text" name="subjects" id="subjects" value="{{ it.subjects|join('; ') if it else '' }}">
+<div id="sugg"></div>
+<div class="grid g2"><div><label>Publisher</label><input type="text" name="publisher" value="{{ it.publisher if it else '' }}" placeholder="University of Lagos School of Postgraduate Studies"></div>
+<div><label>Language</label><select name="language">{% for k,v in languages.items() %}<option value="{{ k }}" {% if (it and it.language==k) or (not it and k=='en') %}selected{% endif %}>{{ v }} ({{ k }})</option>{% endfor %}</select></div></div>
+<div class="grid g2"><div><label>Access</label><select name="rights">{% for r in ['open','embargo','restricted'] %}<option {% if it and it.rights==r %}selected{% endif %}>{{ r }}</option>{% endfor %}</select></div>
+<div><label>Embargo end date <small>if embargoed</small></label><input type="text" name="embargo_until" value="{{ it.embargo_until if it else '' }}" placeholder="YYYY-MM-DD"></div></div>
+<label>Full-text PDF <small>max 25 MB</small></label><input type="file" name="file" accept="application/pdf">
+<p><button>{{ 'Save changes' if edit else 'Submit for review' }}</button></p>
+{% if edit %}<input type="hidden" id="item_id" value="{{ it.id }}">{% endif %}
+</form>
+<div><div class="card" id="qpanel"><h3 style="margin-top:0">Live metadata check</h3><p class="meta">Start typing. The repository checks your metadata against Dublin Core and university rules.</p>
+{% if q %}<span class="score {{ q.grade }}">{{ q.overall }} / 100</span>{% for i in q.issues %}<div class="issue {{ i.level }}">{{ i.message }}</div>{% endfor %}{% endif %}</div>
+<div class="card" id="dpanel" style="display:none"></div></div></div>
+<script>
+const f=document.getElementById('sf');let t;
+function payload(){const d={};new FormData(f).forEach((v,k)=>{if(k!=='file')d[k]=v});const id=document.getElementById('item_id');if(id)d.item_id=id.value;return d}
+async function run(){const r=await fetch('/api/check',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload())});if(!r.ok)return;const j=await r.json();const q=j.quality;
+let h=`<h3 style="margin-top:0">Live metadata check</h3><span class="score ${q.grade}">${q.overall} / 100 (${q.grade})</span><p class="meta">Completeness ${q.completeness}% | Conformance ${q.conformance}%</p>`;
+q.issues.forEach(i=>h+=`<div class="issue ${i.level}">${i.message.replace(/</g,'&lt;')}</div>`);if(!q.issues.length)h+='<div class="alert ok">No issues found.</div>';
+document.getElementById('qpanel').innerHTML=h;
+const s=document.getElementById('sugg');s.innerHTML=j.suggested_subjects.length?'<span class="meta">Suggested from the repository vocabulary: </span>'+j.suggested_subjects.map(x=>`<a href="#" class="chip" data-s="${x.replace(/"/g,'&quot;')}">+ ${x}</a>`).join(''):'';
+s.querySelectorAll('a').forEach(a=>a.onclick=e=>{e.preventDefault();const i=document.getElementById('subjects');i.value=(i.value.trim()?i.value.trim().replace(/;$/,'')+'; ':'')+a.dataset.s;run()});
+const dp=document.getElementById('dpanel');if(j.duplicates.length){dp.style.display='block';dp.innerHTML='<h3 style="margin-top:0">Possible duplicates</h3><div class="alert warn">Similar items already exist. Check before submitting.</div>'+j.duplicates.map(d=>`<p style="font-size:14px"><a href="/items/${d.id}" target="_blank">${d.title}</a><br><span class="meta">${d.date_issued} | similarity ${Math.round(d.similarity*100)}% | ${d.status}</span></p>`).join('')}else{dp.style.display='none'}}
+f.addEventListener('input',()=>{clearTimeout(t);t=setTimeout(run,400)});f.addEventListener('change',run);
+</script>{% endblock %}

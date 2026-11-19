@@ -1,0 +1,233 @@
+{
+ "summary": {
+  "records": 10,
+  "theses": 10,
+  "mean_before": 83.8,
+  "mean_after": 93.6,
+  "mean_completeness": 88.0,
+  "mean_conformance_before": 77.5,
+  "mean_conformance_after": 98.2,
+  "grades_before": {
+   "Good": 6,
+   "Fair": 4
+  },
+  "grades_after": {
+   "Good": 10
+  }
+ },
+ "field_level": {
+  "Supervisor/advisor recorded (theses)": 0.0,
+  "Real abstract present (theses)": 70.0,
+  "Abstract placeholder 'Full text attached' (theses)": 20.0,
+  "Abstract missing (theses)": 10.0,
+  "Publisher recorded (theses)": 50.0,
+  "At least three subject terms (theses)": 80.0,
+  "Author in full 'Surname, I. I.' form (theses)": 10.0,
+  "Date to month precision or better (theses)": 30.0
+ },
+ "publisher_forms": {
+  "(blank)": 5,
+  "School of Postgraduate Studies University of Lagos.": 2,
+  "School of Postgraduate Studies University of Lagos": 1,
+  "University of Lagos Postgraduate School": 1,
+  "University of Lagos": 1
+ },
+ "issue_types": [
+  [
+   "Missing advisor",
+   10
+  ],
+  [
+   "Author '...' is not in '...' form",
+   9
+  ],
+  [
+   "Missing publisher",
+   5
+  ],
+  [
+   "Publisher form varies",
+   5
+  ],
+  [
+   "Title ends with stray punctuation",
+   4
+  ],
+  [
+   "Abstract is a placeholder (for example '...'), not a real abstract",
+   2
+  ],
+  [
+   "Faculty '...' is not in the controlled list",
+   2
+  ],
+  [
+   "Fewer than three subject terms",
+   2
+  ],
+  [
+   "Missing abstract",
+   1
+  ],
+  [
+   "Missing space after comma in title",
+   1
+  ]
+ ],
+ "duplicates": [
+  [
+   "Investigation of General Effects of Cement Dust to Clear the Controversy Surrounding its Toxicity",
+   "Investigation of General Effects of Cement Dust to Clear the Controversy Surrounding its Toxicity",
+   1.0
+  ]
+ ],
+ "records": [
+  {
+   "handle": "123456789/4304",
+   "title": "Social Protest and Literary Imagination in Selected Nigerian",
+   "type": "Thesis",
+   "before": 90.0,
+   "after": 97.0,
+   "completeness": 90.0,
+   "conformance_before": 90.0,
+   "conformance_after": 100.0,
+   "issues": 3
+  },
+  {
+   "handle": "123456789/4466",
+   "title": "Modelling Traffic Congestion Using Analytic Hierarchy Proces",
+   "type": "Thesis",
+   "before": 80.0,
+   "after": 88.0,
+   "completeness": 80.0,
+   "conformance_before": 80.0,
+   "conformance_after": 100.0,
+   "issues": 4
+  },
+  {
+   "handle": "123456789/4545",
+   "title": "Pharmacoeconomic Evaluation of Antibacterial Therapy and Res",
+   "type": "Thesis",
+   "before": 76.0,
+   "after": 88.0,
+   "completeness": 80.0,
+   "conformance_before": 70.0,
+   "conformance_after": 100.0,
+   "issues": 5
+  },
+  {
+   "handle": "123456789/4261",
+   "title": "Commitment in Soren Aabye Kierkegaard's Philosophy: Implicat",
+   "type": "Thesis",
+   "before": 90.0,
+   "after": 97.0,
+   "completeness": 90.0,
+   "conformance_before": 90.0,
+   "conformance_after": 100.0,
+   "issues": 3
+  },
+  {
+   "handle": "123456789/4278",
+   "title": "Physiological Adaptations to Aestivation and Osmotic Regulat",
+   "type": "Thesis",
+   "before": 86.0,
+   "after": 97.0,
+   "completeness": 90.0,
+   "conformance_before": 80.0,
+   "conformance_after": 100.0,
+   "issues": 4
+  },
+  {
+   "handle": "123456789/4559",
+   "title": "Market Structure Paradigms and Institutional Setting in the ",
+   "type": "Thesis",
+   "before": 76.0,
+   "after": 88.0,
+   "completeness": 80.0,
+   "conformance_before": 70.0,
+   "conformance_after": 100.0,
+   "issues": 5
+  },
+  {
+   "handle": "123456789/4269",
+   "title": "Socio-Economic Factors and Vulnerability of Court Users to J",
+   "type": "Thesis",
+   "before": 82.0,
+   "after": 97.0,
+   "completeness": 90.0,
+   "conformance_before": 70.0,
+   "conformance_after": 100.0,
+   "issues": 5
+  },
+  {
+   "handle": "123456789/4060",
+   "title": "Assessment of Unified Examinations Programme in Selected Sci",
+   "type": "Thesis",
+   "before": 86.1,
+   "after": 93.4,
+   "completeness": 95.0,
+   "conformance_before": 72.7,
+   "conformance_after": 90.9,
+   "issues": 4
+  },
+  {
+   "handle": "123456789/4086",
+   "title": "Isolation and Molecular Characterization of Pectinase from P",
+   "type": "Thesis",
+   "before": 86.0,
+   "after": 97.0,
+   "completeness": 90.0,
+   "conformance_before": 80.0,
+   "conformance_after": 100.0,
+   "issues": 4
+  },
+  {
+   "handle": "123456789/3177.2",
+   "title": "Urban and Rural Differences in Creativity Intelligence and A",
+   "type": "Thesis",
+   "before": 86.1,
+   "after": 93.4,
+   "completeness": 95.0,
+   "conformance_before": 72.7,
+   "conformance_after": 90.9,
+   "issues": 4
+  }
+ ],
+ "community_counts": {
+  "Distance Learning Institute": 132,
+  "Faculty of Architecture": 53,
+  "Faculty of Art": 864,
+  "Faculty of Basic Clinical Sciences": 0,
+  "Faculty of Basic Medical Sciences": 507,
+  "Faculty of Clinical Sciences": 1496,
+  "Faculty of Communication & Media Studies": 151,
+  "Faculty of Computing and Informatics": 0,
+  "Faculty of Creative Arts": 0,
+  "Faculty of Dental Sciences": 365,
+  "Faculty of Education": 1583,
+  "Faculty of Engineering": 693,
+  "Faculty of Environmental Sciences": 562,
+  "Faculty of Health Professions": 0,
+  "Faculty of Law": 111,
+  "Faculty of Life Sciences": 1665,
+  "Faculty of Management Sciences": 534,
+  "Faculty of Pharmacy": 469,
+  "Faculty of Physical & Earth Sciences": 138,
+  "Faculty of Social Sciences": 934
+ },
+ "registry": {
+  "coar_ird": {
+   "url": "https://ird.coar-repositories.org/systems/574126c8-237c-43f3-89d0-7d924a7d4f6f",
+   "software": "DSpace 7.4",
+   "oai_pmh": "not enabled (system status)",
+   "updated": "2025-10-28"
+  },
+  "opendoar": {
+   "url": "https://opendoar.ac.uk/repository/3110",
+   "id": 3110,
+   "created": "2014-07-11",
+   "policies": "none on record",
+   "oai_base_url": "not provided"
+  }
+ }
+}

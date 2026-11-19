@@ -1,0 +1,17 @@
+{% extends "base.html" %}{% block title %}Review {{ it.id }}{% endblock %}{% block content %}
+<h1>Review: {{ it.title }}</h1><p class="meta">Status <span class="status {{ it.status }}">{{ it.status }}</span> | Reference {{ it.handle }}</p>
+<div class="grid g2"><div class="card"><h2 style="margin-top:0">Metadata</h2><table class="dc">
+<tr><th>Title</th><td>{{ it.title }}</td></tr><tr><th>Authors</th><td>{{ it.creators|join('<br>')|safe }}</td></tr>
+<tr><th>Advisor</th><td>{{ it.advisor }}</td></tr><tr><th>Date</th><td>{{ it.date_issued }}</td></tr><tr><th>Type</th><td>{{ it.item_type }}</td></tr>
+<tr><th>Faculty</th><td>{{ it.faculty }}</td></tr><tr><th>Subjects</th><td>{% for s in it.subjects %}<span class="chip">{{ s }}</span>{% endfor %}</td></tr>
+<tr><th>Publisher</th><td>{{ it.publisher }}</td></tr><tr><th>Access</th><td>{{ it.rights }} {{ it.embargo_until }}</td></tr>
+<tr><th>Abstract</th><td>{{ it.abstract }}</td></tr><tr><th>Files</th><td>{% for f in files %}{{ f.filename }}<br>{% else %}None{% endfor %}</td></tr></table>
+<p><a class="btn sec" href="/items/{{ it.id }}/edit">Edit metadata</a></p></div>
+<div><div class="card"><h2 style="margin-top:0">Quality report</h2><span class="score {{ q.grade }}">{{ q.overall }} / 100 ({{ q.grade }})</span>
+<p class="meta">Completeness {{ q.completeness }}% | Conformance {{ q.conformance }}%</p>{% for i in q.issues %}<div class="issue {{ i.level }}">{{ i.message }}</div>{% else %}<div class="alert ok">No issues found.</div>{% endfor %}
+<form method="post" style="display:inline"><input type="hidden" name="action" value="normalise"><button class="btn sec">Apply automatic normalisation</button></form>
+{% if suggested %}<p class="meta">Suggested subjects: {% for s in suggested %}<span class="chip">{{ s }}</span>{% endfor %}</p><form method="post" style="display:inline"><input type="hidden" name="action" value="add_subjects"><button class="btn sec">Add suggested subjects</button></form>{% endif %}</div>
+<div class="card"><h2 style="margin-top:0">Duplicate check</h2>{% for d in dups %}<p style="font-size:14px"><a href="/items/{{ d.id }}">{{ d.title }}</a><br><span class="meta">{{ d.date_issued }} | similarity {{ (d.similarity*100)|round|int }}% | {{ d.status }}</span></p>{% else %}<div class="alert ok">No likely duplicates.</div>{% endfor %}</div>
+<div class="card"><h2 style="margin-top:0">Decision</h2><form method="post"><label>Note to depositor <small>required when returning</small></label><textarea name="note" style="min-height:70px"></textarea>
+<p><button class="btn ok" name="action" value="approve">Approve and publish</button> <button class="btn warn" name="action" value="return">Return for correction</button> <button class="btn err" name="action" value="withdraw">Withdraw</button></p></form></div>
+<div class="card"><h2 style="margin-top:0">History</h2>{% for h in history %}<p class="meta">{{ h.at }} | {{ h.full_name or 'system' }} | {{ h.action }} {{ h.note }}</p>{% endfor %}</div></div></div>{% endblock %}

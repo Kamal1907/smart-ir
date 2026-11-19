@@ -1,0 +1,28 @@
+{% extends "base.html" %}{% block title %}{{ it.title[:60] }}{% endblock %}{% block content %}
+<div class="grid" style="grid-template-columns:1fr 300px">
+<div class="card"><h1>{{ it.title }}</h1>
+<p class="meta">{{ it.creators|join('; ') }} | {{ it.date_issued }} | <span class="status {{ it.status }}">{{ it.status }}</span>{% if it.origin=='unilag' %} <span class="chip">UNILAG record</span>{% endif %}</p>
+<h2>Abstract</h2><p>{{ it.abstract or 'No abstract provided.' }}</p>
+<h2>Dublin Core metadata</h2><table class="dc">
+<tr><th>dc.title</th><td>{{ it.title }}</td></tr>
+{% for a in it.creators %}<tr><th>dc.creator</th><td>{{ a }}</td></tr>{% endfor %}
+<tr><th>dc.contributor.advisor</th><td>{{ it.advisor or '(not recorded)' }}</td></tr>
+<tr><th>dc.date.issued</th><td>{{ it.date_issued }}</td></tr>
+<tr><th>dc.type</th><td>{{ it.item_type }}</td></tr>
+<tr><th>dc.subject</th><td>{% for s in it.subjects %}<a class="chip" href="/search?q={{ s|urlencode }}">{{ s }}</a>{% endfor %}</td></tr>
+<tr><th>dc.publisher</th><td>{{ it.publisher or '(not recorded)' }}</td></tr>
+<tr><th>dc.language.iso</th><td>{{ it.language }}</td></tr>
+<tr><th>Faculty</th><td>{{ it.faculty }}</td></tr>
+<tr><th>dc.rights</th><td>{{ it.rights }}{% if it.rights=='embargo' %} until {{ it.embargo_until }}{% endif %}</td></tr>
+<tr><th>dc.identifier.uri</th><td>{{ request.base_url }}items/{{ it.id }}</td></tr>
+{% if it.source_url %}<tr><th>dc.source</th><td><a href="{{ it.source_url }}">{{ it.source_url }}</a></td></tr>{% endif %}
+</table>
+<h2>Files</h2>{% for f in files %}<p><a class="btn sec" href="/items/{{ it.id }}/files/{{ f.id }}">Download {{ f.filename }}</a> <span class="meta">{{ (f.size_bytes/1048576)|round(2) }} MB</span></p>{% else %}<p class="meta">No file attached.</p>{% endfor %}
+</div>
+<div><div class="card"><h3 style="margin-top:0">Usage</h3><div class="grid g2"><div class="stat">{{ views }}<small>Views</small></div><div class="stat">{{ downloads }}<small>Downloads</small></div></div></div>
+<div class="card"><h3 style="margin-top:0">Cite this item</h3><p style="font-size:13px">{{ apa }}</p><a class="btn sec" href="/items/{{ it.id }}/cite.bib">BibTeX</a></div>
+{% if user and user.role in ['librarian','admin'] %}<div class="card"><h3 style="margin-top:0">Metadata quality</h3><span class="score {{ q.grade }}">{{ q.overall }} / 100 ({{ q.grade }})</span>
+<p class="meta">Completeness {{ q.completeness }}% | Conformance {{ q.conformance }}%</p>{% for i in q.issues %}<div class="issue {{ i.level }}">{{ i.message }}</div>{% endfor %}
+<p><a class="btn sec" href="/review/{{ it.id }}">Open in review</a></p></div>{% endif %}
+<div class="card"><h3 style="margin-top:0">Related items</h3>{% for r in related %}<p style="font-size:14px"><a href="/items/{{ r.id }}">{{ r.title }}</a><br><span class="meta">{{ r.date_issued }}</span></p>{% else %}<p class="meta">None found.</p>{% endfor %}</div>
+</div></div>{% endblock %}

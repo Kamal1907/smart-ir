@@ -1,0 +1,7 @@
+{% extends "base.html" %}{% block title %}Review queue{% endblock %}{% block content %}
+<h1>Review queue</h1><p class="meta">{{ queue|length }} awaiting review | {{ returned }} returned to depositors</p>
+<div class="card"><table><tr><th>Ref</th><th>Title</th><th>Type</th><th>Quality</th><th>Issues</th><th>Duplicates</th><th></th></tr>
+{% for it in queue %}<tr><td>{{ it.id }}</td><td>{{ it.title }}<div class="meta">{{ it.creators|join('; ') }}</div></td><td>{{ it.item_type }}</td>
+<td><span class="score {{ it.q.grade }}">{{ it.q.overall }}</span></td><td>{{ it.q.issues|length }}</td>
+<td>{% if it.dups %}<span class="score Poor">{{ it.dups|length }} possible</span>{% else %}None{% endif %}</td><td><a class="btn" href="/review/{{ it.id }}">Review</a></td></tr>
+{% else %}<tr><td colspan="7">The queue is empty.</td></tr>{% endfor %}</table></div>{% endblock %}

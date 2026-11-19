@@ -1,0 +1,12 @@
+{% extends "base.html" %}{% block title %}Analytics{% endblock %}{% block content %}
+<h1>Repository analytics</h1>
+<div class="grid g4">{% for k,l in [('published','Published items'),('pending','Awaiting review'),('views','Item views'),('downloads','File downloads'),('searches','Searches'),('harvests','OAI-PMH harvest requests'),('returned','Returned to depositors'),('avg_quality','Mean quality score')] %}
+<div class="card"><div class="stat">{{ stats[k] }}<small>{{ l }}</small></div></div>{% endfor %}</div>
+<div class="grid g2"><div class="card"><h2 style="margin-top:0">Items by faculty</h2>{% set mx = (by_faculty|map(attribute='n')|max) if by_faculty else 1 %}
+{% for r in by_faculty %}<div class="barrow"><span>{{ r.faculty }}</span><div class="bar" style="width:{{ (100*r.n/mx)|round }}%"></div><span>{{ r.n }}</span></div>{% endfor %}</div>
+<div class="card"><h2 style="margin-top:0">Items by type</h2>{% set mt = (by_type|map(attribute='n')|max) if by_type else 1 %}
+{% for r in by_type %}<div class="barrow"><span>{{ r.item_type }}</span><div class="bar" style="width:{{ (100*r.n/mt)|round }}%"></div><span>{{ r.n }}</span></div>{% endfor %}
+<h2>Items by decade</h2>{% set md = (by_decade|map(attribute='n')|max) if by_decade else 1 %}{% for r in by_decade %}<div class="barrow"><span>{{ r.d }}</span><div class="bar" style="width:{{ (100*r.n/md)|round }}%"></div><span>{{ r.n }}</span></div>{% endfor %}</div></div>
+<div class="grid g2"><div class="card"><h2 style="margin-top:0">Most used items</h2><table><tr><th>Title</th><th>Views</th><th>Downloads</th></tr>{% for r in top %}<tr><td><a href="/items/{{ r.id }}">{{ r.title }}</a></td><td>{{ r.v }}</td><td>{{ r.dl }}</td></tr>{% endfor %}</table></div>
+<div class="card"><h2 style="margin-top:0">Top search terms</h2><table><tr><th>Query</th><th>Count</th></tr>{% for r in queries %}<tr><td>{{ r.q }}</td><td>{{ r.n }}</td></tr>{% endfor %}</table>
+<h3>Searches with no results (content gaps)</h3>{% for z in zero %}<span class="chip">{{ z }}</span>{% else %}<p class="meta">None.</p>{% endfor %}</div></div>{% endblock %}

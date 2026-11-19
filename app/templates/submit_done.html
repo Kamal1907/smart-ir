@@ -1,0 +1,6 @@
+{% extends "base.html" %}{% block title %}Submitted{% endblock %}{% block content %}
+<div class="card"><h1>Submission received</h1><div class="alert ok">Your item (reference smartir/{{ item_id }}) has been sent to the library for review.</div>
+<p>Metadata quality at submission: <span class="score {{ q.grade }}">{{ q.overall }} / 100 ({{ q.grade }})</span></p>
+{% for i in q.issues %}<div class="issue {{ i.level }}">{{ i.message }}</div>{% endfor %}
+{% if dups %}<div class="alert warn" style="margin-top:12px">The system found {{ dups|length }} possible duplicate(s). The librarian will check them.</div>{% endif %}
+<p><a class="btn" href="/my">View my submissions</a> <a class="btn sec" href="/submit">Submit another</a></p></div>{% endblock %}

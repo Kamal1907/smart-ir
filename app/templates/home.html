@@ -1,0 +1,14 @@
+{% extends "base.html" %}{% block title %}Home{% endblock %}{% block content %}
+<div class="hero"><h1>Discover research from the University of Lagos</h1>
+<p>Theses, dissertations and staff publications with quality-checked metadata, full-text search and open harvesting.</p>
+<form class="searchbar" action="/search"><input name="q" placeholder="Search titles, authors, subjects, abstracts and full text" aria-label="Search"><button>Search</button></form></div>
+<div class="grid g4">
+<div class="card"><div class="stat">{{ total }}<small>Published items</small></div></div>
+{% for t in by_type[:3] %}<div class="card"><div class="stat">{{ t.n }}<small>{{ t.item_type or 'Unspecified' }}</small></div></div>{% endfor %}
+</div>
+<div class="grid side">
+<div class="card facet"><h3>Browse by faculty</h3>{% for f in faculties %}<a href="/search?faculty={{ f.faculty|urlencode }}"><span>{{ f.faculty }}</span><span class="meta">{{ f.n }}</span></a>{% endfor %}</div>
+<div class="card"><h2 style="margin-top:0">Recently added</h2>
+{% for it in recent %}<div class="result"><a class="t" href="/items/{{ it.id }}">{{ it.title }}</a>
+<div class="meta">{{ it.creators|join('; ') }} | {{ it.date_issued }} | {{ it.item_type }} | {{ it.faculty }}</div></div>{% endfor %}
+</div></div>{% endblock %}

@@ -1,0 +1,5 @@
+__pycache__/
+data/smartir.db*
+data/files/
+tests/results/performance_*.json.tmp
+.venv/
