@@ -145,8 +145,8 @@ Add `/oai?verb=Identify` and then `/oai?verb=ListRecords&metadataPrefix=oai_dc` 
 ## 4. Good to know
 
 - **The demo resets.** On the free hosting plan, the system starts fresh whenever it restarts. Anything submitted during a demo may disappear. That is fine for a demonstration but not for real storage.
-- **The site can be slow to wake up.** After about 15 minutes without visitors it goes to sleep. The first visit can take 30 to 60 seconds. Open it a few minutes before presenting.
-- **The records are real, the accounts are not.** The 15 records come from the real University of Lagos repository. The login accounts are for demonstration only, and their passwords are public. Change them before sharing the link widely.
+- **The site can be slow to wake up.** After about 15 minutes without visitors, it goes to sleep. The first visit can take 30 to 60 seconds. Open it a few minutes before presenting.
+- **The records are real, the accounts are not.** The records come from the real University of Lagos repository. The login accounts are for demonstration only, and their passwords are public. They will be changed before sharing the link widely.
 - **The checker is rule-based.** SmartIR follows clear, fixed rules. It does not use artificial intelligence, so every score and warning can be explained.
 
 ---
