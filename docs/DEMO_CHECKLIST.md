@@ -27,3 +27,6 @@ All demo accounts use the password `Demo@2026`.
 3. **Analytics or Quality pages look empty or logins fail after a reset.** `seed.py --reset` wipes usage data, and a reset while the server is running can leave a stale connection. Recovery: stop the server, run `python seed.py --reset`, start the server, and do a few searches and item views before opening Analytics.
 
 Cosmetic: the browser console shows one 404 for `/favicon.ico`. It does not affect anything.
+
+
+done
