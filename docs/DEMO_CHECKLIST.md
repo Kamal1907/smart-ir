@@ -6,7 +6,7 @@ All demo accounts use the password `Demo@2026`.
 
 | # | Click path | Expected result |
 |---|---|---|
-| 1 | Home, then search `lagos` | 6 results |
+| 1 | Home, then search `lagos` |  results 14|
 | 2 | Tick the faculty filter "Faculty of Education" | The list narrows (2 results) |
 | 3 | Open any item (for example `/items/5`) | Dublin Core record, "Cite this item" box with APA text, related items |
 | 4 | Click **BibTeX** | A `.bib` entry is returned |
