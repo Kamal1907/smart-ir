@@ -1,22 +1,19 @@
 # SmartIR: Smart Institutional Repository Prototype
 
-A working prototype of a smart institutional repository for research publications, using the University of Lagos as the case study. It was built for a Master's in Information Management research project on the design and implementation of a smart institutional repository.
+SmartIR (Smart Institutional Repository Prototype) is a research-oriented repository system built using the University of Lagos (UNILAG) as a case study. It was created for a Master's research project on designing and implementing a smart institutional repository.
 
-## What it does
+## Key features
 
-| Function | How it works |
-|---|---|
-| Self-submission | Depositors submit theses, dissertations and articles with a PDF |
-| Live metadata quality check | Every field is checked against Dublin Core and university rules as the depositor types; a score out of 100 is shown |
-| Duplicate detection | Similar titles already in the repository are flagged before submission |
-| Subject suggestions | Existing subject terms are suggested from the repository vocabulary |
-| Librarian review | Approve, return with a note, or withdraw; one-click author and publisher normalisation; full audit log |
-| Full-text search | Ranked search across title, author, subject, abstract and PDF text, with faculty, type, access and year filters |
-| Access control | Open, embargoed and restricted items; embargoed files cannot be downloaded |
-| Citation export | APA 7 and BibTeX |
-| Usage analytics | Views, downloads, searches, zero-result searches, items by faculty, type and decade |
-| Metadata quality audit | Repository-wide quality scores, most frequent problems, duplicate report |
-| Interoperability | OAI-PMH 2.0 data provider (oai_dc) at `/oai`, validated against the official schema |
+Self-submission of theses, dissertations, and articles with PDF upload.
+Live metadata quality checking using Dublin Core standards and university rules, with a quality score displayed as users type.
+Duplicate detection that flags similar titles before submission.
+Subject term suggestions from existing repository vocabulary.
+Librarian review workflow with approval, return, withdrawal, normalization tools, and audit logs.
+Full-text search across metadata and PDF contents with filtering options.
+Access control supporting open, embargoed, and restricted items.
+Citation export in APA 7 and BibTeX formats.
+Analytics dashboard for views, downloads, searches, and metadata quality metrics.
+OAI-PMH 2.0 interoperability for metadata harvesting via /oai.
 
 ## Run it on a laptop (Windows, macOS or Linux)
 
@@ -31,7 +28,7 @@ python seed.py
 uvicorn app.main:app
 ```
 
-Open http://127.0.0.1:8000 in a browser.
+Open https://smart-ir-xzzg.onrender.com in a browser.
 
 ### Demonstration accounts (password: Demo@2026)
 
@@ -78,7 +75,7 @@ Results are written to `tests/results/`.
 
 `data/unilag_records.json` holds 15 records transcribed from public item pages of the University of Lagos Institutional Repository (ir.unilag.edu.ng) on 16 November 2026: 10 doctoral theses with full metadata and 5 recent staff publications. Synthetic records are created only by the performance test and are marked `origin = demo`.
 
-## Project structure
+## Project structure 
 
 ```
 app/main.py        web routes, workflow, search, analytics
